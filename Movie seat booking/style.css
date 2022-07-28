@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+/* charcoal: 37505C; */
+
+:root {
+  --cinema: #4682B4; /* Steelblue */
+  --seat-free: #FA8072; /* Salmon */
+  --seat-occupied: #4C212A; /* Dark Sienna */
+  --text: #0C090D; /* Rich Black FOGRA 39  */
+}
+
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-family: 'Raleway', sans-serif;
+  color: var(--text);
+  background-color: var(--cinema);
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.movie-container {
+  margin: 0 20px;
+}
+
+.movie {
+  font-family: 'Raleway', sans-serif;
+  background-color: white;
+  border: 0;
+  border-radius: 5px;
+  margin-left: 10px;
+  padding: 5px 15px;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.showcase {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background: rgba(0, 0, 0, 0.1);
+  padding: 5px 10px;
+  border-radius: 5px;
+  list-style-type: none;
+}
+
+.showcase li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 10px;
+}
+
+.showcase li small {
+  margin-left: 5px;
+}
+
+.container {
+  perspective: 300px;
+  margin-bottom: 30px;
+}
+
+.screen {
+  background-color: white;
+  height: 50px;
+  width: 100%;
+  margin: 15px 0;
+  box-shadow: 0 3px 10px rgba(255, 255, 255, 0.7);
+  transform: rotateX(-45deg);
+}
+
+.seat {
+  background-color: var(--seat-free);
+  height: 12px;
+  width: 15px;
+  margin: 3px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.seat.selected {
+  background-color: white;
+}
+
+.seat.occupied {
+  background-color: var(--seat-occupied);
+  opacity: 0.5;
+}
+
+.seat:not(.occupied) {
+  transition: transform 0.2s ease-in-out;
+}
+
+.seat:not(.occupied):hover {
+  cursor: pointer;
+  transform: scale(1.2);
+}
+
+.showcase .seat:not(.occupied):hover {
+  cursor: default;
+  transform: scale(1);
+}
+
+.seat:nth-child(2) {
+  margin-right: 18px;
+}
+
+.seat:nth-last-child(2) {
+  margin-left: 18px;
+}
+
+.row {
+  display: flex;
+}
