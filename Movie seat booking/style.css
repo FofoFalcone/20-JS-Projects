@@ -11,6 +11,7 @@
   --seat-free: #FA8072; /* Salmon */
   --seat-occupied: #4C212A; /* Dark Sienna */
   --text: #0C090D; /* Rich Black FOGRA 39  */
+  --text-alt: #FAF3DD /* Misty Rose */
 }
 
 
@@ -19,7 +20,7 @@ body {
   flex-direction: column;
   justify-content: center;
   font-family: 'Raleway', sans-serif;
-  color: var(--text);
+  color: var(--text-alt);
   background-color: var(--cinema);
   align-items: center;
   height: 100vh;
@@ -120,3 +121,7 @@ body {
 .row {
   display: flex;
 }
+
+p.text span {
+  color: var(--text-alt);
+}  
